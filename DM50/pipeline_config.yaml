@@ -1,0 +1,29 @@
+notebooks_dir: .  # Current directory since notebooks appear to be in root
+output_dir: pipeline_output
+timeout: 1800
+
+global_parameters:
+  data_path: '/work/DM2425_ABCDEats_DATASET (1).csv'
+  debug_mode: false
+
+pipeline_steps:
+  - notebook: 1st_notebook_complete.ipynb
+    parameters:
+      data_file: '/work/DM2425_ABCDEats_DATASET (1).csv'
+    fail_fast: true
+  
+  - notebook: coding (1).ipynb
+    parameters:
+      data_file: '/work/DM2425_ABCDEats_DATASET (1).csv'
+      
+  - notebook: K-means/K-medoids.ipynb
+    parameters:
+      data_file: '/work/DM2425_ABCDEats_DATASET (1).csv'
+      
+  - notebook: Main_pipeline.ipynb
+    parameters:
+      data_file: '/work/DM2425_ABCDEats_DATASET (1).csv'
+      
+  - notebook: SOM.ipynb
+    parameters:
+      data_file: '/work/DM2425_ABCDEats_DATASET (1).csv'
